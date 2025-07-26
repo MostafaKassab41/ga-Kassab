@@ -3,7 +3,7 @@ on: push
 
 
 jobs:
-    ahmed:
+    Task1:
         runs-on: ubuntu-latest
         steps:
             - name: Welcome 
@@ -13,3 +13,13 @@ jobs:
                 sudo apt install cowsay -y
                 cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
                 cat dragon.txt
+
+    Task2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Show readme 
+              run: |
+                echo "Contents of README.md:"
+                cat README.md
+                echo ""
+                
