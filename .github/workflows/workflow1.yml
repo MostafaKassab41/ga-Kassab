@@ -7,10 +7,21 @@ jobs:
         needs: Task2
         runs-on: ubuntu-latest
         steps:
+            - name: checkout
+              uses: actions/checkout@v4
+
             - name: Welcome 
               run: |
                 echo "Hello world"
-                sleep 15
+
+            - name: download artifacts
+              uses: actions/download-artifact@v4
+              with:
+                name: artifact
+                path: dragon
+
+            - name: cat dragon.txt
+              run: cat dragon/dragon.txt
 
     Task2:
         runs-on: ubuntu-latest
@@ -28,5 +39,12 @@ jobs:
                 ls -ltra
                 chmod +x .github/workflows/script.sh
                 sh .github/workflows/script.sh
+
+            - name: upload artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: artifact
+                path: dragon.txt
+                retention-days: 1
 
                 
