@@ -17,9 +17,13 @@ jobs:
     Task2:
         runs-on: ubuntu-latest
         steps:
-            - name: Show readme 
+            - name: checkout 
+              uses: actions/checkout@v4
+
+            - name: Read README file
               run: |
                 echo "Contents of README.md:"
                 cat README.md
-                echo ""
+
+
                 
