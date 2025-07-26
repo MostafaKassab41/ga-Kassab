@@ -4,6 +4,7 @@ on: push
 
 jobs:
     Task1:
+        needs: Task2
         runs-on: ubuntu-latest
         steps:
             - name: Welcome 
