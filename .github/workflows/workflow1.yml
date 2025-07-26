@@ -9,10 +9,7 @@ jobs:
             - name: Welcome 
               run: |
                 echo "Hello world"
-                sudo apt update -y
-                sudo apt install cowsay -y
-                cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
-                cat dragon.txt
+                sleep 15
 
     Task2:
         runs-on: ubuntu-latest
@@ -25,5 +22,10 @@ jobs:
                 echo "Contents of README.md:"
                 cat README.md
 
+            - name: script
+              run: |
+                ls -ltra
+                chmod +x .githunb/workflows/script.sh
+                sh .github/workflows/script.sh
 
                 
